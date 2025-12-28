@@ -30,5 +30,8 @@ yarn-error.log*
 .env.*.local
 
 # Test artifacts
-*.gif
 test-output/
+
+# GIF files (except example)
+*.gif
+!claude-statusline-token-graph.gif

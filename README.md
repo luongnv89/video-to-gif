@@ -6,6 +6,10 @@ A Node.js command-line tool that converts MP4 or MOV videos to high-quality time
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org)
 
+## Example Output
+
+![Example timelapse GIF](claude-statusline-token-graph.gif)
+
 ## Features
 
 - **Timelapse Mode**: Converts entire videos into short GIFs (max 5 seconds) by sampling frames evenly across the video
