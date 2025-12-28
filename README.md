@@ -4,7 +4,7 @@ A Node.js command-line tool that converts MP4 or MOV videos to high-quality time
 
 [![CI](https://github.com/luongnv89/video-to-gif/actions/workflows/ci.yml/badge.svg)](https://github.com/luongnv89/video-to-gif/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org)
 
 ## Features
 
@@ -16,7 +16,7 @@ A Node.js command-line tool that converts MP4 or MOV videos to high-quality time
 
 ## Prerequisites
 
-- **Node.js** >= 18.0.0
+- **Node.js** >= 20.0.0
 - **FFmpeg** must be installed and available in your PATH
 
 ### Installing FFmpeg

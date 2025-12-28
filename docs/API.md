@@ -111,7 +111,7 @@ The CLI provides descriptive error messages for common issues:
 
 ### Requirements
 
-- Node.js >= 18.0.0
+- Node.js >= 20.0.0
 - FFmpeg installed and available in PATH
 
 ### Supported Formats
