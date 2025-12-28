@@ -22,7 +22,9 @@ const QUALITY_PRESETS = {
  */
 function parseTime(timeStr) {
   if (typeof timeStr === 'number') {
-    if (timeStr < 0) throw new Error('Time cannot be negative');
+    if (timeStr < 0) {
+      throw new Error('Time cannot be negative');
+    }
     return timeStr;
   }
 
@@ -31,13 +33,19 @@ function parseTime(timeStr) {
   }
 
   const parts = timeStr.split(':').map(Number);
-  if (parts.some(isNaN) || parts.some(n => n < 0)) {
+  if (parts.some(isNaN) || parts.some((n) => n < 0)) {
     throw new Error(`Invalid time format: ${timeStr}`);
   }
 
-  if (parts.length === 1) return parts[0];
-  if (parts.length === 2) return parts[0] * 60 + parts[1];
-  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  if (parts.length === 1) {
+    return parts[0];
+  }
+  if (parts.length === 2) {
+    return parts[0] * 60 + parts[1];
+  }
+  if (parts.length === 3) {
+    return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  }
 
   throw new Error(`Invalid time format: ${timeStr}`);
 }
@@ -46,7 +54,9 @@ function parseTime(timeStr) {
  * Safely parse fraction string (e.g., "30000/1001" or "30")
  */
 function parseFraction(fractionStr) {
-  if (!fractionStr) return null;
+  if (!fractionStr) {
+    return null;
+  }
   const parts = String(fractionStr).split('/');
   if (parts.length === 2) {
     const numerator = parseFloat(parts[0]);
@@ -70,7 +80,7 @@ function getVideoMetadata(inputPath) {
         return;
       }
 
-      const videoStream = metadata.streams.find(s => s.codec_type === 'video');
+      const videoStream = metadata.streams.find((s) => s.codec_type === 'video');
       if (!videoStream) {
         reject(new Error('No video stream found in file'));
         return;
@@ -109,7 +119,9 @@ async function convertToGif(inputPath, outputPath, options) {
   const videoRangeDuration = videoRangeEnd - videoRangeStart;
 
   if (videoRangeDuration <= 0) {
-    throw new Error(`Start time (${start}) is beyond video duration (${metadata.duration.toFixed(2)}s)`);
+    throw new Error(
+      `Start time (${start}) is beyond video duration (${metadata.duration.toFixed(2)}s)`
+    );
   }
 
   // Calculate how many frames we need for the output GIF
@@ -137,8 +149,12 @@ async function convertToGif(inputPath, outputPath, options) {
 
   console.log(`\nInput: ${inputPath}`);
   console.log(`Output: ${outputPath}`);
-  console.log(`Mode: Timelapse (sampling ${videoRangeDuration.toFixed(2)}s video into ${gifDuration.toFixed(2)}s GIF)`);
-  console.log(`Sampling: ~${totalFramesNeeded} frames from ${videoRangeStart}s to ${videoRangeEnd.toFixed(2)}s`);
+  console.log(
+    `Mode: Timelapse (sampling ${videoRangeDuration.toFixed(2)}s video into ${gifDuration.toFixed(2)}s GIF)`
+  );
+  console.log(
+    `Sampling: ~${totalFramesNeeded} frames from ${videoRangeStart}s to ${videoRangeEnd.toFixed(2)}s`
+  );
   console.log(`Frame rate: ${fps} FPS`);
   console.log(`Quality: ${quality}\n`);
 
@@ -215,13 +231,19 @@ program
   .argument('<input>', 'Input video file (MP4 or MOV)')
   .option('-o, --output-dir <path>', 'Output directory (default: same as input)')
   .option('-n, --name <filename>', 'Output filename without extension (default: same as input)')
-  .option('-s, --start <time>', 'Start sampling from this timestamp (formats: SS, MM:SS, HH:MM:SS)', '0')
+  .option(
+    '-s, --start <time>',
+    'Start sampling from this timestamp (formats: SS, MM:SS, HH:MM:SS)',
+    '0'
+  )
   .option('-d, --duration <seconds>', 'Output GIF duration in seconds (max 5)', '5')
   .option('-r, --fps <number>', 'Frame rate (frames per second)', '10')
   .option('-w, --width <pixels>', 'Output width in pixels (height auto-calculated)')
   .option('-q, --quality <level>', 'Quality preset: low, medium, high', 'high')
   .option('-y, --overwrite', 'Overwrite output file if it exists', false)
-  .addHelpText('after', `
+  .addHelpText(
+    'after',
+    `
 How It Works:
   This tool creates a TIMELAPSE GIF that shows the entire video's progression
   from start to end, compressed into a short GIF (max 5 seconds).
@@ -277,7 +299,8 @@ Parameter Details:
 
   --overwrite     Replace existing output file without prompting
                   Default: false (will error if file exists)
-`);
+`
+  );
 
 // Main execution
 async function main() {
@@ -368,4 +391,15 @@ async function main() {
   }
 }
 
-main();
+// Export functions for testing
+module.exports = {
+  parseTime,
+  parseFraction,
+  SUPPORTED_FORMATS,
+  QUALITY_PRESETS,
+};
+
+// Run main only if this is the entry point
+if (require.main === module) {
+  main();
+}
