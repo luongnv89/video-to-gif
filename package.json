@@ -1,0 +1,27 @@
+{
+  "name": "video-to-gif",
+  "version": "1.0.0",
+  "description": "Convert MP4 or MOV videos to GIFs with customizable options",
+  "main": "video2gif.js",
+  "bin": {
+    "video2gif": "./video2gif.js"
+  },
+  "scripts": {
+    "test": "node video2gif.js --help"
+  },
+  "keywords": [
+    "video",
+    "gif",
+    "converter",
+    "ffmpeg",
+    "mp4",
+    "mov"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cli-progress": "^3.12.0",
+    "commander": "^12.1.0",
+    "fluent-ffmpeg": "^2.1.3"
+  }
+}
