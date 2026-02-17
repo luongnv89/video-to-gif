@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <style>
+      .wordmark { font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="120" fill="#FFFFFF" rx="4"/>
+  <!-- Video frame (left) -->
+  <rect x="16" y="28" width="48" height="36" rx="3" fill="none" stroke="#000000" stroke-width="2.5"/>
+  <!-- Play triangle inside video frame -->
+  <polygon points="34,38 34,56 46,47" fill="#6B7280"/>
+  <!-- Arrow pointing right -->
+  <line x1="70" y1="52" x2="82" y2="52" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="78,46 84,52 78,58" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- GIF loop symbol (circular arrow) -->
+  <circle cx="102" cy="52" r="18" fill="none" stroke="#000000" stroke-width="2.5"/>
+  <!-- Circular arrow indicator -->
+  <path d="M 102 34 L 108 38 L 102 42" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Film strip perforations on video frame -->
+  <rect x="18" y="30" width="4" height="3" rx="0.5" fill="#6B7280" opacity="0.5"/>
+  <rect x="26" y="30" width="4" height="3" rx="0.5" fill="#6B7280" opacity="0.5"/>
+  <rect x="34" y="30" width="4" height="3" rx="0.5" fill="#6B7280" opacity="0.5"/>
+  <rect x="42" y="30" width="4" height="3" rx="0.5" fill="#6B7280" opacity="0.5"/>
+  <rect x="18" y="59" width="4" height="3" rx="0.5" fill="#6B7280" opacity="0.5"/>
+  <rect x="26" y="59" width="4" height="3" rx="0.5" fill="#6B7280" opacity="0.5"/>
+  <rect x="34" y="59" width="4" height="3" rx="0.5" fill="#6B7280" opacity="0.5"/>
+  <rect x="42" y="59" width="4" height="3" rx="0.5" fill="#6B7280" opacity="0.5"/>
+  <!-- GIF text inside loop -->
+  <text x="102" y="56" text-anchor="middle" class="wordmark" font-size="10" font-weight="700" fill="#22C55E">GIF</text>
+  <!-- Wordmark -->
+  <text x="132" y="56" class="wordmark" font-size="30" font-weight="700" fill="#000000" letter-spacing="-0.5">video</text>
+  <text x="214" y="56" class="wordmark" font-size="30" font-weight="700" fill="#6B7280" letter-spacing="-0.5">-to-</text>
+  <text x="274" y="56" class="wordmark" font-size="30" font-weight="700" fill="#22C55E" letter-spacing="-0.5">gif</text>
+  <!-- Tagline -->
+  <text x="132" y="76" class="wordmark" font-size="11" font-weight="400" fill="#6B7280" letter-spacing="0.5">Video to Timelapse GIF</text>
+  <!-- Bottom filmstrip accent -->
+  <rect x="16" y="92" width="108" height="2" rx="1" fill="#22C55E" opacity="0.3"/>
+</svg>

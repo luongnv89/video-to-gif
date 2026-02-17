@@ -1,3 +1,5 @@
+<p align="center"><img src="logo.png" alt="video-to-gif Logo" width="400"></p>
+
 # video-to-gif
 
 A Node.js command-line tool that converts MP4 or MOV videos to high-quality timelapse GIFs using FFmpeg.
